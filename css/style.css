@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/assets/fonts/Open_Sans/static/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* hero section */
+.hero {
+    background-color: #282c34;
+    color: #ffffff;
+    text-align: center;
+    padding: 10vh 20vw;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* intro section */
+.intro {
+    text-align: center;
+    padding: 7.5vh 25%;
+    background-color: #f4f4f4;
+    color: #555;
+    font-size: 1em;
+}
