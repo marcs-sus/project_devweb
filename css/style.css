@@ -12,7 +12,7 @@ body {
     box-sizing: border-box;
 }
 
-/* hero section */
+/* Hero section */
 .hero {
     background-color: #282c34;
     color: #ffffff;
@@ -29,11 +29,67 @@ body {
     font-size: 1.2em;
 }
 
-/* intro section */
+/* Intro section */
 .intro {
     text-align: center;
     padding: 7.5vh 25%;
     background-color: #f4f4f4;
     color: #555;
     font-size: 1em;
+}
+
+/* Carousel section */
+.carousel {
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    overflow: hidden;
+    max-width: 90rem;
+    margin: 3rem auto;
+    position: relative;
+}
+
+.carousel h1 {
+    background-color: #e4e4e4;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    width: 100vw;
+    flex: 0 0 100vw;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
