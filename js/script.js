@@ -1,8 +1,6 @@
-// Carousel behaviour
+// Carousel
 const track = document.querySelector(".carousel-track");
 const slides = document.querySelectorAll(".carousel-item");
-const prevButton = document.getElementById("prevBtn");
-const nextButton = document.getElementById("nextBtn");
 
 let currentIndex = 0;
 let intervalId;
@@ -15,13 +13,13 @@ function moveToSlide(index) {
 }
 
 // Modular arithmetic for slides loop
-nextButton.onclick = function () {
+function nextSlide() {
   currentIndex = (currentIndex + 1) % slides.length;
   moveToSlide(currentIndex);
   resetInterval();
 };
 
-prevButton.onclick = function () {
+function prevSlide() {
   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   moveToSlide(currentIndex);
   resetInterval();
@@ -41,3 +39,15 @@ function resetInterval() {
 }
 
 startInterval();
+
+
+// Navbar
+const sidebar = document.querySelector('.sidebar');
+
+function showSidebar() {
+  sidebar.style.display = 'flex';
+}
+
+function hideSidebar() {
+  sidebar.style.display = 'none';
+}
