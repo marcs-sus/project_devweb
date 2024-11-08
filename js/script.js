@@ -1,53 +1,54 @@
-// Carousel
-const track = document.querySelector(".carousel-track");
-const slides = document.querySelectorAll(".carousel-item");
+// Slideshow
+const slideshow = document.querySelector(".slideshow"),
+  carousel = document.querySelector(".carousel"),
+  imgs = document.querySelectorAll("img"),
+  btns = document.querySelectorAll(".slide-button");
 
-let currentIndex = 0;
-let intervalId;
+const autoDeley = 5000;
 
-// Move to appointed slide
-function moveToSlide(index) {
-  const slideWidth = slides[0].offsetWidth;
-  track.style.transform = `translateX(-${slideWidth * index}px)`;
-  track.style.width = `${slideWidth * slides.length}px`;
-}
+let imgIndex = 1,
+  intervalId;
 
-// Modular arithmetic for slides loop
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  moveToSlide(currentIndex);
-  resetInterval();
+const autoSlide = () => {
+  intervalId = setInterval(() => slideImage(++imgIndex), autoDeley);
 };
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  moveToSlide(currentIndex);
-  resetInterval();
+autoSlide();
+
+const slideImage = () => {
+  if (imgIndex === imgs.length) {
+    imgIndex = 0;
+  } else if (imgIndex < 0) {
+    imgIndex = imgs.length - 1;
+  }
+
+  carousel.style.transform = `translate(-${imgIndex * 100}%)`;
 };
 
-// Autoplay after 10 seconds
-function startInterval() {
-  intervalId = setInterval(function () {
-    currentIndex = (currentIndex + 1) % slides.length;
-    moveToSlide(currentIndex);
-  }, 10000);
-}
-
-function resetInterval() {
+const updateClick = (e) => {
   clearInterval(intervalId);
-  startInterval();
+  if (e.target.id === "next") {
+    imgIndex++;
+  } else {
+    imgIndex--;
+  }
+  
+  slideImage(imgIndex)
 }
 
-startInterval();
+btns.forEach((button) => button.addEventListener("click", updateClick));
 
+slideshow.addEventListener("mouseover", () => clearInterval(intervalId));
+
+slideshow.addEventListener("mouseleave", autoSlide);
 
 // Navbar
-const sidebar = document.querySelector('.sidebar');
+const sidebar = document.querySelector(".sidebar");
 
 function showSidebar() {
-  sidebar.style.display = 'flex';
+  sidebar.style.display = "flex";
 }
 
 function hideSidebar() {
-  sidebar.style.display = 'none';
+  sidebar.style.display = "none";
 }
