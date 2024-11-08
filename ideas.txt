@@ -1,12 +1,12 @@
-Brainstorm of future features
+Brainstorm of features
 
 * animated image carousel
-*
-*
-*
-*
-*
-*
-*
-*
-*
+* drag and drop section
+* massive text interactions (lorem300)
+* video/songs search or list
+* 
+* 
+* 
+* 
+* 
+* 

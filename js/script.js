@@ -1,3 +1,14 @@
+// Navbar
+const sidebar = document.querySelector(".sidebar");
+
+function showSidebar() {
+  sidebar.style.display = "flex";
+}
+
+function hideSidebar() {
+  sidebar.style.display = "none";
+}
+
 // Slideshow
 const slideshow = document.querySelector(".slideshow"),
   carousel = document.querySelector(".carousel"),
@@ -12,8 +23,6 @@ let imgIndex = 1,
 const autoSlide = () => {
   intervalId = setInterval(() => slideImage(++imgIndex), autoDeley);
 };
-
-autoSlide();
 
 const slideImage = () => {
   if (imgIndex === imgs.length) {
@@ -32,23 +41,33 @@ const updateClick = (e) => {
   } else {
     imgIndex--;
   }
-  
-  slideImage(imgIndex)
-}
+
+  slideImage(imgIndex);
+};
 
 btns.forEach((button) => button.addEventListener("click", updateClick));
 
 slideshow.addEventListener("mouseover", () => clearInterval(intervalId));
-
 slideshow.addEventListener("mouseleave", autoSlide);
 
-// Navbar
-const sidebar = document.querySelector(".sidebar");
+autoSlide();
 
-function showSidebar() {
-  sidebar.style.display = "flex";
-}
+// Drag and Drop
+const boxes = document.querySelectorAll(".dnd-box"),
+  item = document.querySelector(".dnd-item");
 
-function hideSidebar() {
-  sidebar.style.display = "none";
-}
+boxes.forEach((box) => {
+  box.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    box.classList.add("hovered");
+  });
+
+  box.addEventListener("dragleave", () => {
+    box.classList.remove("hovered");
+  });
+
+  box.addEventListener("drop", () => {
+    box.appendChild(item);
+    box.classList.remove("hovered");
+  });
+});

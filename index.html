@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +9,53 @@
     <link rel="stylesheet" href="css/normalize.css">
     <title>Project DevWeb</title>
 </head>
+
 <body>
     <!-- Navbar section -->
     <header>
         <nav class="navbar">
             <ul class="sidebar">
-                <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg></a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <ul class="nav-links">
                 <li class="hideOnMobile"><a href="index.html">Home</a></li>
                 <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-                <li class="sidebar-button" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                <li class="sidebar-button" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg"
+                            height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg></a></li>
             </ul>
         </nav>
-    </header><!-- Hero section -->
+    </header>
+
+    <!-- Hero section -->
     <section class="hero">
         <h1>Web Development Project</h1>
-        <p>This project will cover everything that I learn into one cohesive work, from HTML to PHP, JavaScript, and beyond.
+        <p>This project will cover everything that I learn into one cohesive work, from HTML to PHP, JavaScript, and
+            beyond.
         </p>
     </section>
-    
+
     <!-- Intro section -->
     <section class="intro">
         <p>
             This page is a collection of ideas, concepts, and features that I find interesting and good for practice.
-            Most of what you will see here consists of unrelated elements, created just for the sake of trying things out.
+            Most of what you will see here consists of unrelated elements, created just for the sake of trying things
+            out.
             There's no central theme or purpose—it's simply a place to experiment and test different possibilities.
         </p>
     </section>
-    
+
     <!-- Slideshow section -->
-    <div class="subtitle"><h2>Slideshow</h2></div>
+    <div class="subtitle">
+        <h2>Slideshow</h2>
+    </div>
     <section class="slideshow">
         <div class="slideshow-container">
             <div class="carousel">
@@ -49,12 +64,27 @@
                 <img src="assets/images/slide3.jpg" alt="Slide 3">
             </div>
         </div>
-        
+
         <button class="slide-button" id="prev">&#10094;</button>
         <button class="slide-button" id="next">&#10095;</button>
     </section>
-    
+
+    <!-- Drag and Drop section -->
+    <div class="subtitle">
+        <h2>Drag and Drop</h2>
+    </div>
+    <section class="drag-and-drop">
+        <div class="drag-and-drop-container">
+            <div class="dnd-box">
+                <div class="dnd-item" draggable="true"></div>
+            </div>
+            <div class="dnd-box"></div>
+            <div class="dnd-box"></div>
+            <div class="dnd-box"></div>
+        </div>
+    </section>
+
     <script src="js/script.js"></script>
-    </body>
-    
-    </html>
+</body>
+
+</html>
