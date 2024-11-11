@@ -34,18 +34,16 @@ const slideImage = () => {
   carousel.style.transform = `translate(-${imgIndex * 100}%)`;
 };
 
-const updateClick = (e) => {
+function moveImage(btn) {
   clearInterval(intervalId);
-  if (e.target.id === "next") {
+  if (btn.id === "next") {
     imgIndex++;
-  } else {
+  } else if (btn.id === "prev") {
     imgIndex--;
   }
 
   slideImage(imgIndex);
-};
-
-btns.forEach((button) => button.addEventListener("click", updateClick));
+}
 
 slideshow.addEventListener("mouseover", () => clearInterval(intervalId));
 slideshow.addEventListener("mouseleave", autoSlide);
@@ -71,3 +69,74 @@ boxes.forEach((box) => {
     box.classList.remove("hovered");
   });
 });
+
+// Interactive Text Area
+const textArea = document.getElementById("textArea");
+
+function toggleTextStyle(style) {
+  switch (style) {
+    case "normal":
+      textArea.style.fontStyle = "normal";
+      break;
+    case "italic":
+      textArea.style.fontStyle = "italic";
+      break;
+    case "oblique":
+      textArea.style.fontStyle = "oblique";
+    default:
+      break;
+  }
+}
+
+function toggleTextWeight(weight) {
+  switch (weight) {
+    case "normal":
+      textArea.style.fontWeight = "normal";
+      break;
+    case "bold":
+      textArea.style.fontWeight = "bold";
+    default:
+      break;
+  }
+}
+
+function toggleTextDeco(deco) {
+  switch (deco) {
+    case "underline":
+      textArea.style.textDecoration = "underline";
+      break;
+    case "overline":
+      textArea.style.textDecoration = "overline";
+      break;
+    case "underline overline":
+      textArea.style.textDecoration = "underline overline";
+    case "strikethrough":
+      textArea.style.textDecoration = "line-through";
+      break;
+    default:
+      break;
+  }
+}
+
+function transformText(transform) {
+  switch (transform) {
+    case "uppercase":
+      textArea.style.textTransform = "uppercase";
+      break;
+    case "lowercase":
+      textArea.style.textTransform = "lowercase";
+      break;
+    default:
+      break;
+  }
+}
+
+function clearText() {
+  textArea.value = "";
+}
+
+function copyText() {
+  textArea.select();
+  navigator.clipboard.writeText(textArea.value);
+  alert("Copied to clipboard");
+}

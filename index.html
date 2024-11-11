@@ -65,8 +65,8 @@
             </div>
         </div>
 
-        <button class="slide-button" id="prev">&#10094;</button>
-        <button class="slide-button" id="next">&#10095;</button>
+        <button onclick="moveImage(this)" class="slide-button" id="prev">&#10094;</button>
+        <button onclick="moveImage(this)" class="slide-button" id="next">&#10095;</button>
     </section>
 
     <!-- Drag and Drop section -->
@@ -84,6 +84,34 @@
         </div>
     </section>
 
+    <!-- Interactive Text area section -->
+    <div class="subtitle">
+        <h2>Interactive Text Area</h2>
+    </div>
+    <section>
+        <div class="textarea-container">
+            <textarea class="interactive-textarea" id="textArea" placeholder="Type something here..."></textarea>
+            <div class="textarea-buttons">
+                <button onclick="toggleTextWeight('normal')">normal</button>
+                <button onclick="toggleTextWeight('bold')">bold</button>
+
+                <button onclick="toggleTextStyle('normal')">normal</button>
+                <button onclick="toggleTextStyle('oblique')">oblique</button>
+                <button onclick="toggleTextStyle('italic')">italic</button>
+
+                <button onclick="toggleTextDeco('underline')">underline</button>
+                <button onclick="toggleTextDeco('overline')">overline</button>
+                <button onclick="toggleTextDeco('underline overline')">under over</button>
+                <button onclick="toggleTextDeco('strikethrough')">strikethrough</button>
+
+                <button onclick="transformText('uppercase')">uppercase</button>
+                <button onclick="transformText('lowercase')">lowercase</button>
+
+                <button onclick="clearText()">clear</button>
+                <button onclick="copyText()">copy</button>
+            </div>
+        </div>
+    </section>
     <script src="js/script.js"></script>
 </body>
 

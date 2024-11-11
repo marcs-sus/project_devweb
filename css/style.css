@@ -222,6 +222,9 @@ button#next {
   border: 0.25vh dashed black;
 }
 
+/* Interactive Text Area section */
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .hideOnMobile {
