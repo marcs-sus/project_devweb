@@ -30,7 +30,7 @@ const slideImage = () => {
   } else if (imgIndex < 0) {
     imgIndex = imgs.length - 1;
   }
-
+  
   carousel.style.transform = `translate(-${imgIndex * 100}%)`;
 };
 
@@ -127,6 +127,10 @@ function transformText(transform) {
     default:
       break;
   }
+}
+
+function changeFontSize(size) {
+  textArea.style.fontSize = size;
 }
 
 function clearText() {
