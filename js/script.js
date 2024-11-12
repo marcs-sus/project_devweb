@@ -73,49 +73,47 @@ boxes.forEach((box) => {
 // Interactive Text Area
 const textArea = document.getElementById("textArea");
 
-function toggleTextStyle(style) {
-  switch (style) {
-    case "normal":
-      textArea.style.fontStyle = "normal";
-      break;
-    case "italic":
-      textArea.style.fontStyle = "italic";
-      break;
-    case "oblique":
-      textArea.style.fontStyle = "oblique";
-    default:
-      break;
+let isBold = false;
+let isItalic = false;
+let currentDeco = "none";
+
+function toggleTextWeight() {
+  isBold = !isBold;
+  if (isBold) {
+    textArea.style.fontWeight = "bold";
+  } 
+  if (!isBold) {
+    textArea.style.fontWeight = "normal";
   }
+  document.getElementById("boldBtn").classList.toggle("active", isBold);
 }
 
-function toggleTextWeight(weight) {
-  switch (weight) {
-    case "normal":
-      textArea.style.fontWeight = "normal";
-      break;
-    case "bold":
-      textArea.style.fontWeight = "bold";
-    default:
-      break;
+function toggleTextStyle() {
+  isItalic = !isItalic;
+  if (isItalic) {
+    textArea.style.fontStyle = "italic";
   }
+  if (!isItalic) {
+    textArea.style.fontStyle = "normal";
+  }
+  document.getElementById("italicBtn").classList.toggle("active", isItalic);
 }
 
 function toggleTextDeco(deco) {
-  switch (deco) {
-    case "underline":
-      textArea.style.textDecoration = "underline";
-      break;
-    case "overline":
-      textArea.style.textDecoration = "overline";
-      break;
-    case "underline overline":
-      textArea.style.textDecoration = "underline overline";
-    case "strikethrough":
-      textArea.style.textDecoration = "line-through";
-      break;
-    default:
-      break;
+  if (currentDeco === deco) {
+    textArea.style.textDecoration = "none";
+    document.getElementById(deco + "Btn").classList.remove("active");
+    currentDeco = null;
+    return;
   }
+
+  ["underline", "overline", "line-through"].forEach((dec) => {
+    document.getElementById(dec + "Btn").classList.remove("active");
+  });
+
+  textArea.style.textDecoration = deco;
+  document.getElementById(deco + "Btn").classList.add("active");
+  currentDeco = deco;
 }
 
 function transformText(transform) {
