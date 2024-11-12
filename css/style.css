@@ -244,6 +244,7 @@ button#next {
   height: 30vh;
   box-sizing: border-box;
   border: 0.25vh solid #a0a0a0;
+  background-color: white;
   border-radius: 0.1vh;
   font-size: 1.5rem;
   resize: none;
@@ -253,7 +254,8 @@ button#next {
   text-transform: none;
 }
 
-.textarea::placeholder {
+.textarea[contenteditable="true"]:empty::before {
+  content: "Type something here...";
   color: #888;
   font-weight: normal;
   font-style: normal;

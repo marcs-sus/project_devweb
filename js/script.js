@@ -81,7 +81,7 @@ function toggleTextWeight() {
   isBold = !isBold;
   if (isBold) {
     textArea.style.fontWeight = "bold";
-  } 
+  }
   if (!isBold) {
     textArea.style.fontWeight = "normal";
   }
@@ -130,11 +130,20 @@ function transformText(transform) {
 }
 
 function clearText() {
-  textArea.value = "";
+  textArea.innerHTML = "";
 }
 
 function copyText() {
-  textArea.select();
-  navigator.clipboard.writeText(textArea.value);
-  alert("Copied to clipboard");
+  const range = document.createRange();
+  range.selectNodeContents(textArea);
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+
+  try {
+    document.execCommand("copy");
+    alert("Styled text copied to clipboard!");
+  } catch (err) {
+    alert("Failed to copy styled text: " + err);
+  }
 }
