@@ -145,7 +145,7 @@ function copyText() {
   selection.addRange(range);
 
   try {
-    document.execCommand("copy");
+    document.execCommand("copy"); // Obsolete but still works
     alert("Styled text copied to clipboard!");
   } catch (err) {
     alert("Failed to copy styled text: " + err);

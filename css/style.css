@@ -23,7 +23,7 @@ body {
   margin: auto;
   margin-top: 4rem;
   margin-bottom: 2rem;
-  width: 40vw;
+  width: 500px;
   background-color: #cfcfcf;
 }
 
@@ -46,7 +46,7 @@ nav li {
 }
 
 nav a {
-  height: 100%;
+  height: 100%; 
   padding: 0 30px;
   text-decoration: none;
   display: flex;
@@ -121,9 +121,8 @@ nav li:first-child {
   display: flex;
   position: relative;
   max-width: 80vw;
-  width: 100%;
-  height: 90vh;
-  aspect-ratio: 16/9;
+  width: 1300px;
+  height: 650px;
   margin: auto;
   align-items: center;
   justify-content: center;
@@ -138,8 +137,8 @@ nav li:first-child {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  height: 7vh;
-  width: 7vh;
+  height: 50px;
+  width: 50px;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -156,16 +155,16 @@ button.slide-button:active {
 }
 
 button#prev {
-  left: 1vw;
+  left: 15px;
 }
 
 button#next {
-  right: 1vw;
+  right: 15px;
 }
 
 .slideshow-container {
-  height: 80vh;
-  width: 100%;
+  height: 550px;
+  width: 1150px;
   max-width: 100vw;
   overflow: hidden;
 }
@@ -194,22 +193,23 @@ button#next {
 }
 
 .drag-and-drop-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2vh;
-  width: 60vh;
+  display: grid;
+  grid-template-columns: repeat(2, 0.45fr);
+  width: 500px;
+  height: 500px;
   margin: auto;
   border-radius: 2vh;
-  padding: 3vh;
+  padding: 10px;
   background-color: #e1e1e1;
   align-items: center;
+  justify-items: center;
   justify-content: center;
 }
 
 .dnd-box {
   position: relative;
-  height: 25vh;
-  width: 25vh;
+  height: 175px;
+  width: 175px;
   border-radius: 1vh;
   border: 0.25vh solid black;
 }
@@ -229,7 +229,7 @@ button#next {
 
 /* Interactive Text Area section */
 .textarea-container {
-  width: 85vw;
+  width: 1375px;
   padding: 3vh;
   margin: auto;
   border-radius: 1vh;
@@ -266,9 +266,9 @@ button#next {
 .textarea-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1vh;
-  width: 85vw;
-  margin: 1vh auto;
+  gap: 6px;
+  width: 1300px;
+  margin: 8px auto;
 }
 
 .textarea-buttons button {
@@ -309,7 +309,7 @@ button#next {
 }
 
 .fontSelect option:checked {
- background-color: #e1e1e1;
+  background-color: #e1e1e1;
 }
 
 .fontSelect option:hover {
@@ -327,7 +327,7 @@ button#next {
   grid-template-columns: repeat(3, 200px);
   justify-content: center;
   align-content: center;
-  grid-gap: 10px;
+  gap: 10px;
   height: 100vh;
 }
 
