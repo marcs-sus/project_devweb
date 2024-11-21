@@ -5,8 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+    <!-- CSS stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+
+    <!-- JS scripts -->
+    <script defer src="js/script.js"></script>
+
     <title>Project DevWeb</title>
 </head>
 
@@ -59,9 +65,9 @@
     <section class="slideshow">
         <div class="slideshow-container">
             <div class="carousel">
-                <img src="assets/images/slide1.jpg" alt="Slide 1">
-                <img src="assets/images/slide2.jpg" alt="Slide 2">
-                <img src="assets/images/slide3.jpg" alt="Slide 3">
+                <img id="slideImg" src="assets/images/slide1.jpg" alt="Slide 1">
+                <img id="slideImg" src="assets/images/slide2.jpg" alt="Slide 2">
+                <img id="slideImg" src="assets/images/slide3.jpg" alt="Slide 3">
             </div>
         </div>
 
@@ -159,14 +165,28 @@
         </div>
     </section>
 
-    
-
+    <!-- Lightbox section -->
+    <section class="lightbox">
+        <div class="subtitle">
+            <h2>Lightbox</h2>
+        </div>
+        <div class="lightbox-grid">
+            <img id="lbImg" src="https://picsum.photos/300?random=1" alt="Lightbox Image 1">
+            <img id="lbImg" src="https://picsum.photos/300?random=2" alt="Lightbox Image 2">
+            <img id="lbImg" src="https://picsum.photos/300?random=3" alt="Lightbox Image 3">
+            <img id="lbImg" src="https://picsum.photos/300?random=4" alt="Lightbox Image 4">
+            <img id="lbImg" src="https://picsum.photos/300?random=5" alt="Lightbox Image 5">
+            <img id="lbImg" src="https://picsum.photos/300?random=6" alt="Lightbox Image 6">
+            <img id="lbImg" src="https://picsum.photos/300?random=7" alt="Lightbox Image 7">
+            <img id="lbImg" src="https://picsum.photos/300?random=8" alt="Lightbox Image 8">
+            <img id="lbImg" src="https://picsum.photos/300?random=9" alt="Lightbox Image 9">
+        </div>
+    </section>
 
     <!-- Footer section -->
     <footer>
-        <p>&copy; 2024 Marcos Vinicius Cunha. All rights reserved.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, recusandae?</p>
     </footer>
-    <script src="js/script.js"></script>
 </body>
 
 </html>

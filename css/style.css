@@ -69,7 +69,7 @@ nav li:first-child {
   right: 0;
   height: 100vh;
   width: 250px;
-  z-index: 999;
+  z-index: 9999;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
@@ -314,6 +314,54 @@ button#next {
 
 .fontSelect option:hover {
   background-color: #e1e1e1;
+}
+
+/* Lightbox section */
+.lightbox {
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  justify-content: center;
+  align-content: center;
+  grid-gap: 10px;
+  height: 100vh;
+}
+
+.lightbox-grid img {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#lightbox.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  padding: 4px;
+  background-color: #202020;
+  border: 3px solid white;
+  border-radius: 5px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive styles */
