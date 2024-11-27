@@ -25,6 +25,7 @@ body {
   margin-bottom: 2rem;
   width: 500px;
   background-color: #cfcfcf;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Navbar section */
@@ -46,7 +47,7 @@ nav li {
 }
 
 nav a {
-  height: 100%; 
+  height: 100%;
   padding: 0 30px;
   text-decoration: none;
   display: flex;
@@ -127,7 +128,7 @@ nav li:first-child {
   align-items: center;
   justify-content: center;
   background-color: #e1e1e1;
-  box-shadow: 0 2vmin 4vmin rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 2vh;
   padding: 3.5vh;
   box-sizing: border-box;
@@ -148,6 +149,7 @@ nav li:first-child {
   cursor: pointer;
   transition: all 0.3s linear;
   z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button.slide-button:active {
@@ -204,6 +206,7 @@ button#next {
   align-items: center;
   justify-items: center;
   justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dnd-box {
@@ -212,6 +215,7 @@ button#next {
   width: 175px;
   border-radius: 1vh;
   border: 0.25vh solid black;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .dnd-item {
@@ -252,6 +256,7 @@ button#next {
   font-style: normal;
   text-decoration: none;
   text-transform: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .textarea[contenteditable="true"]:empty::before {
@@ -278,6 +283,7 @@ button#next {
   border-radius: 0.25vh;
   font-size: 1.5rem;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .textarea-buttons .active {
@@ -336,6 +342,7 @@ button#next {
   height: 200px;
   cursor: pointer;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #lightbox {
@@ -362,6 +369,104 @@ button#next {
   border: 3px solid white;
   border-radius: 5px;
   box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stopwatch section */
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.stopwatch-container {
+  padding: 30px;
+  margin: 8px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-display {
+  border-radius: 15px;
+  background-color: #eaeaea;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  padding: 20px 40px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stopwatch-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stopwatch-buttons button {
+  background-color: #d8d8d8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.stopwatch-buttons button:hover {
+  background-color: #c4c4c4;
+  transform: scale(1.05);
+}
+
+.stopwatch-buttons button:active {
+  background-color: #a8a8a8;
+  transform: scale(0.95);
+}
+
+/* Footer section */
+footer {
+  margin-top: 75px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer h2 {
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+footer h2:last-child {
+  font-size: 1.6rem;
+}
+
+.dots::after {
+  content: ".";
+  animation: threeDots 1.5s steps(3, end) infinite;
+}
+
+@keyframes threeDots {
+  0% {
+    content: ".";
+  }
+  33% {
+    content: "..";
+  }
+  66% {
+    content: "...";
+  }
+  100% {
+    content: ".";
+  }
 }
 
 /* Responsive styles */

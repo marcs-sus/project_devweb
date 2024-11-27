@@ -174,3 +174,66 @@ lightbox.addEventListener("click", (e) => {
   if (e.target !== e.currentTarget) return;
   lightbox.classList.remove("active");
 });
+
+// Stopwatch
+const stopwatch = document.querySelector(".time-display");
+const toggleIcon = document.querySelector("#playPause svg");
+
+let [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+let timeInterval = null;
+let isRunning = false;
+
+function startPauseStopwatch() {
+  if (isRunning) {
+    clearInterval(timeInterval);
+    toggleIcon.innerHTML = `
+      <path id="playIcon" d="M320-202v-560l440 280-440 280Zm66.67-280Zm0 158.67L636-482 386.67-640.67v317.34Z" />
+    `;
+    isRunning = false;
+  } else {
+    timeInterval = setInterval(displayTime, 10);
+    toggleIcon.innerHTML = `
+      <path id="pauseIcon" d="M523.33-200v-560H760v560H523.33ZM200-200v-560h236.67v560H200Zm390-66.67h103.33v-426.66H590v426.66Zm-323.33 0H370v-426.66H266.67v426.66Zm0-426.66v426.66-426.66Zm323.33 0v426.66-426.66Z" />
+    `;
+    isRunning = true;
+  }
+}
+
+function resetStopwatch() {
+  clearInterval(timeInterval);
+  [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+  stopwatch.innerHTML = "00 : 00 : 00 : 000";
+  isRunning = false;
+
+  toggleIcon.innerHTML = `
+    <path id="playIcon" d="M320-202v-560l440 280-440 280Zm66.67-280Zm0 158.67L636-482 386.67-640.67v317.34Z" />
+  `;
+}
+
+function displayTime() {
+  milliseconds += 10;
+  if (milliseconds === 1000) {
+    milliseconds = 0;
+    seconds++;
+    if (seconds === 60) {
+      seconds = 0;
+      minutes++;
+      if (minutes === 60) {
+        minutes = 0;
+        hours++;
+      }
+    }
+  }
+
+  let h = hours < 10 ? "0" + hours : hours;
+  let m = minutes < 10 ? "0" + minutes : minutes;
+  let s = seconds < 10 ? "0" + seconds : seconds;
+  let ms =
+    milliseconds < 10
+      ? "00" + milliseconds
+      : milliseconds < 100
+      ? "0" + milliseconds
+      : milliseconds;
+
+  stopwatch.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
+}

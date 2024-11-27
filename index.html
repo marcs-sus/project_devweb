@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
     <!-- CSS stylesheets -->
     <link rel="stylesheet" href="css/style.css">
@@ -31,9 +31,10 @@
             </ul>
             <ul class="nav-links">
                 <li class="hideOnMobile"><a href="index.html">Home</a></li>
-                <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-                <li class="sidebar-button" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg"
-                            height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                <li class="hideOnMobile"><a href="#">#</a></li>
+                <li class="sidebar-button" onclick="showSidebar()"><a>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                         </svg></a></li>
             </ul>
@@ -65,9 +66,9 @@
     <section class="slideshow">
         <div class="slideshow-container">
             <div class="carousel">
-                <img id="slideImg" src="assets/images/slide1.jpg" alt="Slide 1">
-                <img id="slideImg" src="assets/images/slide2.jpg" alt="Slide 2">
-                <img id="slideImg" src="assets/images/slide3.jpg" alt="Slide 3">
+                <img id="slideImg" src="https://picsum.photos/1280/720?random=1" alt="Slide 1">
+                <img id="slideImg" src="https://picsum.photos/1280/720?random=2s" alt="Slide 2">
+                <img id="slideImg" src="https://picsum.photos/1280/720?random=3" alt="Slide 3">
             </div>
         </div>
 
@@ -166,10 +167,10 @@
     </section>
 
     <!-- Lightbox section -->
+    <div class="subtitle">
+        <h2>Lightbox</h2>
+    </div>
     <section class="lightbox">
-        <div class="subtitle">
-            <h2>Lightbox</h2>
-        </div>
         <div class="lightbox-grid">
             <img id="lbImg" src="https://picsum.photos/300?random=1" alt="Lightbox Image 1">
             <img id="lbImg" src="https://picsum.photos/300?random=2" alt="Lightbox Image 2">
@@ -183,9 +184,39 @@
         </div>
     </section>
 
+    <!-- Stopwatch section-->
+    <div class="subtitle">
+        <h2>Stopwatch</h2>
+    </div>
+    <section class="stopwatch">
+        <div class="stopwatch-container">
+            <div class="time-display">
+                00 : 00 : 00 : 000
+            </div>
+            <div class="stopwatch-buttons">
+                <button id="playPause" class="play-pause-btn" onclick="startPauseStopwatch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                        fill="#000000">
+                        <path id="play-icon"
+                            d="M320-202v-560l440 280-440 280Zm66.67-280Zm0 158.67L636-482 386.67-640.67v317.34Z" />
+                    </svg>
+                </button>
+                <button class="reset-btn" onclick="resetStopwatch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                        fill="#000000">
+                        <path
+                            d="M480-80q-75 0-140.5-28.17-65.5-28.16-114.33-77-48.84-48.83-77-114.33Q120-365 120-440h66.67q0 122.33 85.5 207.83 85.5 85.5 207.83 85.5 122.33 0 207.83-85.5 85.5-85.5 85.5-207.83 0-122.33-83.83-207.83-83.83-85.5-206.17-85.5H466L535.33-664l-46 47.33L338-768l151.33-151.33 46 46.66L462.67-800H480q75 0 140.5 28.17 65.5 28.16 114.33 77 48.84 48.83 77 114.33Q840-515 840-440t-28.17 140.5q-28.16 65.5-77 114.33-48.83 48.84-114.33 77Q555-80 480-80Z" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Footer section -->
     <footer>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, recusandae?</p>
+        <h2>End of page!</h2>
+        <h2>Under construction<span class="dots"></span></h2>
     </footer>
 </body>
 
