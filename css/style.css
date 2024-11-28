@@ -12,20 +12,34 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Open Sans", Arial, sans-serif;
 }
 
 .subtitle {
   text-align: center;
-  border-radius: 1.65vh;
-  padding: 3vh;
-  margin: auto;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  width: 500px;
+  border-radius: 1em;
+  padding: 2em;
+  margin: 2em auto 1em;
+  width: 40vw;
+  max-width: 90%;
   background-color: #cfcfcf;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 380px) {
+  .subtitle {
+    font-size: 0.65rem;
+  }
 }
 
 /* Navbar section */
@@ -48,7 +62,7 @@ nav li {
 
 nav a {
   height: 100%;
-  padding: 0 30px;
+  padding: 0 1.5rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -91,21 +105,41 @@ nav li:first-child {
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .sidebar-button {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
 /* Hero section */
 .hero {
   background-color: #282c34;
   color: #ffffff;
   text-align: center;
-  padding: 10vh 20vw;
+  padding: 10vh 5%;
 }
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-.hero h1 {
-  font-size: 3em;
-  margin: 0;
-}
+  .hero p {
+    font-size: 1rem;
+  }
 
-.hero p {
-  font-size: 1.2em;
+  .hero {
+    padding: 8vh 5%;
+  }
 }
 
 /* Intro section */
@@ -114,7 +148,12 @@ nav li:first-child {
   padding: 7.5vh 25%;
   background-color: #f4f4f4;
   color: #555;
-  font-size: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    padding: 5vh 5%;
+  }
 }
 
 /* Slideshow section */
@@ -165,6 +204,7 @@ button#next {
 }
 
 .slideshow-container {
+  display: flex;
   height: 550px;
   width: 1150px;
   max-width: 100vw;
@@ -188,6 +228,18 @@ button#next {
   flex-shrink: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .slideshow {
+    max-width: 95%;
+    height: 350px;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    height: 300px;
+  }
+}
+
 /* Drag and Drop section */
 .drag-and-drop {
   align-items: center;
@@ -197,11 +249,12 @@ button#next {
 .drag-and-drop-container {
   display: grid;
   grid-template-columns: repeat(2, 0.45fr);
+  gap: 10px;
   width: 500px;
   height: 500px;
   margin: auto;
   border-radius: 2vh;
-  padding: 10px;
+  padding: 1rem;
   background-color: #e1e1e1;
   align-items: center;
   justify-items: center;
@@ -231,10 +284,22 @@ button#next {
   border: 0.25vh dashed black;
 }
 
+@media screen and (max-width: 525px) {
+  .drag-and-drop-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .dnd-box {
+    height: 100px;
+    width: 100px;
+  }
+}
+
 /* Interactive Text Area section */
 .textarea-container {
-  width: 1375px;
-  padding: 3vh;
+  width: 90%;
+  padding: 1rem;
   margin: auto;
   border-radius: 1vh;
   align-items: center;
@@ -245,12 +310,14 @@ button#next {
 .textarea {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
-  padding: 1.5vh;
-  height: 30vh;
+  padding: 1rem;
+  height: 35vh;
+  text-overflow: clip;
+  overflow-y: scroll;
   box-sizing: border-box;
-  border: 0.25vh solid #a0a0a0;
+  border: 1px solid #a0a0a0;
   background-color: white;
-  border-radius: 0.1vh;
+  border-radius: 0.5rem;
   font-size: normal;
   font-weight: normal;
   font-style: normal;
@@ -270,10 +337,11 @@ button#next {
 
 .textarea-buttons {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 6px;
-  width: 1300px;
-  margin: 8px auto;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem auto;
 }
 
 .textarea-buttons button {
@@ -290,7 +358,7 @@ button#next {
   background-color: #c3c3c3;
 }
 
-.fontSelect {
+.font-select {
   width: 85px;
   text-align: center;
   font-size: 1.2rem;
@@ -300,25 +368,25 @@ button#next {
   margin-right: 35px;
 }
 
-.fontSelect:hover {
+.font-select:hover {
   background-color: #eeeeee;
   border-color: #bcbcbc;
 }
 
-.fontSelect:focus {
+.font-select:focus {
   outline: none;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-.fontSelect option {
+.font-select option {
   background-color: #f6f6f6;
 }
 
-.fontSelect option:checked {
+.font-select option:checked {
   background-color: #e1e1e1;
 }
 
-.fontSelect option:hover {
+.font-select option:hover {
   background-color: #e1e1e1;
 }
 
@@ -334,7 +402,7 @@ button#next {
   justify-content: center;
   align-content: center;
   gap: 10px;
-  height: 100vh;
+  margin: 8em auto;
 }
 
 .lightbox-grid img {
@@ -371,6 +439,19 @@ button#next {
   box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
 }
 
+@media screen and (max-width: 600px) {
+  .lightbox-grid {
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 2em auto;
+  }
+
+  .lightbox-grid img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 /* Stopwatch section */
 .stopwatch {
   display: flex;
@@ -382,14 +463,15 @@ button#next {
 }
 
 .stopwatch-container {
-  padding: 30px;
+  width: 90%;
+  padding: 1rem;
   margin: 8px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #f9f9f9;
-  border-radius: 15px;
+  border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -400,7 +482,7 @@ button#next {
   font-weight: bold;
   color: #333;
   text-align: center;
-  padding: 20px 40px;
+  padding: 1.2rem 2.5rem;
   margin-bottom: 15px;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -429,6 +511,26 @@ button#next {
 .stopwatch-buttons button:active {
   background-color: #a8a8a8;
   transform: scale(0.95);
+}
+
+@media screen and (max-width: 675px) {
+  .time-display {
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .time-display {
+    font-size: 2rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .time-display {
+    font-size: 1.6rem;
+  }
 }
 
 /* Footer section */
@@ -466,22 +568,5 @@ footer h2:last-child {
   }
   100% {
     content: ".";
-  }
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .hideOnMobile {
-    display: none;
-  }
-
-  .sidebar-button {
-    display: block;
-  }
-}
-
-@media (max-width: 400px) {
-  .sidebar {
-    width: 100%;
   }
 }
