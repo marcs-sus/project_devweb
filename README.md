@@ -1,4 +1,5 @@
 # project_devweb
+## Version 1.0
 
 Project dedicated on implementing (almost) everything from my web development classes
 
